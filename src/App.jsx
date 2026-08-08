@@ -13,16 +13,16 @@ const WHATSAPP_NUMBER = "212613798674"; // TODO: replace with your real WhatsApp
 
 // image: null -> shows an elegant gradient placeholder. Set to a URL to use a real photo.
 const PRODUCTS = [
-  { id: 1, category: "bag", image: 'photo/products/1000140605.png', colors: ["#B08A4A", "#8C6A3B"], price: 450, rating: 4.8,
+  { id: 1, category: "bag", image: '/products/1000140605.png', colors: ["#B08A4A", "#8C6A3B"], price: 450, rating: 4.8,
     name: { ar: "حقيبة الغروب", fr: "Sac Couchant", en: "Sunset Bag" },
     desc: { ar: "جلد طبيعي بلمسة ذهبية، مصنوعة يدويًا بعناية فائقة.", fr: "Cuir naturel à touche dorée, façonné à la main avec le plus grand soin.", en: "Natural leather with a golden touch, handcrafted with the utmost care." } },
-  { id: 2, category: "bag", image: 'photo/products/IMG-20260728-WA0034.jpg', colors: ["#C9A46C", "#8C6A3B"], price: 520, rating: 4.6,
+  { id: 2, category: "bag", image: '/products/IMG-20260728-WA0034.jpg', colors: ["#C9A46C", "#8C6A3B"], price: 520, rating: 4.6,
     name: { ar: "حقيبة الأطلس", fr: "Sac Atlas", en: "Atlas Bag" },
     desc: { ar: "تصميم أنيق مستوحى من التراث، بخياطة يدوية دقيقة.", fr: "Design élégant inspiré du patrimoine, à la couture manuelle précise.", en: "An elegant design inspired by heritage, with precise hand-stitching." } },
-  { id: 3, category: "bag", image: 'photo/products/IMG-20260728-WA0038.jpg', colors: ["#8C6A3B", "#5C4527"], price: 390, rating: 4.7,
+  { id: 3, category: "bag", image: '/products/IMG-20260728-WA0038.jpg', colors: ["#8C6A3B", "#5C4527"], price: 390, rating: 4.7,
     name: { ar: "حقيبة الظل", fr: "Sac Ombre", en: "Shadow Bag" },
     desc: { ar: "خطوط بسيطة وجلد فاخر لإطلالة يومية أنيقة.", fr: "Lignes épurées et cuir luxueux pour un look quotidien raffiné.", en: "Clean lines and luxurious leather for an elegant everyday look." } },
-  { id: 4, category: "art", image: 'photo/products/1000141182.png', colors: ["#EAD7C2", "#B08A4A"], price: 680, rating: 4.9,
+  { id: 4, category: "art", image: '/products/1000141182.png', colors: ["#EAD7C2", "#B08A4A"], price: 680, rating: 4.9,
     name: { ar: "لوحة الصحراء", fr: "Toile du Désert", en: "Desert Canvas" },
     desc: { ar: "ألوان دافئة تحاكي كثبان الصحراء عند الغروب.", fr: "Des teintes chaudes évoquant les dunes du désert au coucher du soleil.", en: "Warm tones echoing desert dunes at sunset." } },
   { id: 5, category: "art", image: null, colors: ["#D8C0A0", "#8C6A3B"], price: 590, rating: 4.5,
@@ -47,31 +47,31 @@ const TEAM = [
     id: 3,
     name: "Sanae Amentag",
     role: { en: "Finance Manage", fr: "Gestion financière", ar: "إدارة الشؤون المالية" },
-    image: "photo/team/IMG-20251223-WA0112.jpg"
+    image: "/team/IMG-20251223-WA0112.jpg"
   },
   {
     id: 4,
     name: "Asmae Aben",
     role: { en: "Marketing Manager", fr: "Responsable marketing", ar: "مديرة تسويق" },
-    image: "photo/team/IMG-20260729-WA0021.jpg"
+    image: "/team/IMG-20260729-WA0021.jpg"
   },
    {
     id: 1,
     name: "Samira Amkhaou",
     role: { en: "Team Leader", fr: "Chef d'équipe", ar: "قائد الفريق" },
-    image: "photo/team/IMG-20260212-WA0030.jpg"
+    image: "/team/IMG-20260212-WA0030.jpg"
   },
  {
     id: 5,
     name: "Sana Fhad",
     role: { en: "Co-Finance & Operations", fr: "Co-responsable des finances et des opérations", ar: "التمويل والعمليات المشتركة" },
-    image: "photo/team/IMG-20260729-WA0022.jpg"
+    image: "/team/IMG-20260729-WA0022.jpg"
   },
   {
     id: 6,
     name: "Hiba Ben Thami",
     role: { en: "Social Media Manager", fr: "Responsable des réseaux sociaux", ar: "مديرة وسائل التواصل الاجتماعي" },
-    image: "photo/team/IMG-20260731-WA0000.jpg"
+    image: "/team/IMG-20260731-WA0000.jpg"
   }
 ];
 
