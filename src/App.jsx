@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import {
   ChevronLeft, ChevronRight, ShoppingBag, X, Star, Plus, Minus, Globe,
-  Send, Palette, Trash2, Download, Instagram, Facebook, Phone, Mail,
+  Send, Palette, Trash2, Download, Phone, Mail,
   MapPin, ShoppingCart, Menu, Image as ImageIcon, Brush,
 } from "lucide-react";
 
@@ -1035,10 +1035,6 @@ function ContactSection({ sectionRef, t }) {
           <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.ink }}><MapPin size={15} /> Morocco</div>
         </div>
 
-        <div className="flex justify-center gap-4 mb-8">
-          <a href="#" className="p-3 rounded-full" style={{ background: COLORS.white }}><Instagram size={18} color={COLORS.primaryDark} /></a>
-          <a href="#" className="p-3 rounded-full" style={{ background: COLORS.white }}><Facebook size={18} color={COLORS.primaryDark} /></a>
-        </div>
 
         <a
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
