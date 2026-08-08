@@ -797,8 +797,6 @@ function CustomizerSection({ sectionRef, t, lang }) {
     return { x: ((clientX - rect.left) / rect.width) * canvas.width, y: ((clientY - rect.top) / rect.height) * canvas.height };
   };
 
-  // stopPropagation on every drawing handler so touches on the canvas never
-  // bubble up to the full-page scroller and flip to the next section.
   const start = (e) => {
     e.stopPropagation();
     drawing.current = true;
@@ -846,22 +844,31 @@ function CustomizerSection({ sectionRef, t, lang }) {
   const palette = [COLORS.ink, COLORS.primaryDark, COLORS.primary, COLORS.primaryLight, "#7A9E7E", "#A65D57"];
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-10 py-6 md:py-24 overflow-y-auto" style={{ background: COLORS.cream }}>
-      <Reveal className="text-center mb-4 md:mb-10 max-w-xl shrink-0">
-        <h2 className="text-xl md:text-4xl font-semibold mb-1 md:mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.customizer.title}</h2>
-        <p className="text-xs md:text-base opacity-70">{t.customizer.subtitle}</p>
+    // CHANGED: justify-center -> justify-start md:justify-center, px/py مصغّرة على الجوال
+    <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-start md:justify-center px-3 md:px-10 py-3 md:py-24 overflow-y-auto">
+      {/* CHANGED: mb-4 -> mb-2 */}
+      <Reveal className="text-center mb-2 md:mb-10 max-w-xl shrink-0">
+        {/* CHANGED: text-xl -> text-lg, mb-1 -> mb-0.5 */}
+        <h2 className="text-lg md:text-4xl font-semibold mb-0.5 md:mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.customizer.title}</h2>
+        {/* CHANGED: text-xs -> text-[11px] */}
+        <p className="text-[11px] md:text-base opacity-70">{t.customizer.subtitle}</p>
       </Reveal>
 
-      <div className="grid md:grid-cols-2 gap-4 md:gap-8 w-full max-w-4xl">
-        <Reveal className="bg-white rounded-2xl p-4 md:p-6 shadow-md flex flex-col gap-3 md:gap-4">
+      {/* CHANGED: gap-4 -> gap-3 */}
+      <div className="grid md:grid-cols-2 gap-3 md:gap-8 w-full max-w-4xl">
+        {/* CHANGED: p-4 -> p-3, gap-3 -> gap-2 */}
+        <Reveal className="bg-white rounded-2xl p-3 md:p-6 shadow-md flex flex-col gap-2 md:gap-4">
           <div>
-            <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.type}</label>
-            <div className="flex gap-3">
+            {/* CHANGED: text-xs -> text-[11px], mb-2 -> mb-1 */}
+            <label className="text-[11px] md:text-sm font-medium block mb-1 md:mb-2" style={{ color: COLORS.ink }}>{t.customizer.type}</label>
+            {/* CHANGED: gap-3 -> gap-2 */}
+            <div className="flex gap-2 md:gap-3">
               {["bag", "painting"].map((ty) => (
                 <button
                   key={ty}
                   onClick={() => setType(ty)}
-                  className="px-4 py-2 rounded-full text-xs md:text-sm border"
+                  // CHANGED: px-4 py-2 -> px-3 py-1.5, text-xs -> text-[11px]
+                  className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[11px] md:text-sm border"
                   style={{ borderColor: COLORS.primary, background: type === ty ? COLORS.primary : "transparent", color: type === ty ? "#fff" : COLORS.primaryDark }}
                 >
                   {ty === "bag" ? t.customizer.bag : t.customizer.painting}
@@ -871,44 +878,48 @@ function CustomizerSection({ sectionRef, t, lang }) {
           </div>
 
           <div>
-            <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.descLabel}</label>
+            <label className="text-[11px] md:text-sm font-medium block mb-1 md:mb-2" style={{ color: COLORS.ink }}>{t.customizer.descLabel}</label>
             <textarea
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
               placeholder={t.customizer.descPlaceholder}
-              rows={3}
-              className="w-full rounded-xl border p-3 text-sm outline-none"
+              rows={2}
+              // CHANGED: p-3 -> p-2, text-sm -> text-xs
+              className="w-full rounded-xl border p-2 md:p-3 text-xs md:text-sm outline-none"
               style={{ borderColor: COLORS.cream }}
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          {/* CHANGED: gap-3 -> gap-2 */}
+          <div className="grid grid-cols-2 gap-2 md:gap-3">
             <div>
-              <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.nameLabel}</label>
-              <input value={name} onChange={(e) => setName(e.target.value)} placeholder={t.customizer.namePlaceholder} className="w-full rounded-xl border p-3 text-sm outline-none" style={{ borderColor: COLORS.cream }} />
+              <label className="text-[11px] md:text-sm font-medium block mb-1 md:mb-2" style={{ color: COLORS.ink }}>{t.customizer.nameLabel}</label>
+              <input value={name} onChange={(e) => setName(e.target.value)} placeholder={t.customizer.namePlaceholder} className="w-full rounded-xl border p-2 md:p-3 text-xs md:text-sm outline-none" style={{ borderColor: COLORS.cream }} />
             </div>
             <div>
-              <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.phoneLabel}</label>
-              <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t.customizer.phonePlaceholder} className="w-full rounded-xl border p-3 text-sm outline-none" style={{ borderColor: COLORS.cream }} />
+              <label className="text-[11px] md:text-sm font-medium block mb-1 md:mb-2" style={{ color: COLORS.ink }}>{t.customizer.phoneLabel}</label>
+              <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t.customizer.phonePlaceholder} className="w-full rounded-xl border p-2 md:p-3 text-xs md:text-sm outline-none" style={{ borderColor: COLORS.cream }} />
             </div>
           </div>
 
-          <button onClick={submit} className="mt-2 w-full py-3 rounded-full text-white text-sm font-medium flex items-center justify-center gap-2" style={{ background: COLORS.primary }}>
-            <Send size={15} /> {t.customizer.submit}
+          {/* CHANGED: mt-2 -> mt-1, py-3 -> py-2.5, text-sm -> text-xs */}
+          <button onClick={submit} className="mt-1 md:mt-2 w-full py-2.5 md:py-3 rounded-full text-white text-xs md:text-sm font-medium flex items-center justify-center gap-2" style={{ background: COLORS.primary }}>
+            <Send size={14} /> {t.customizer.submit}
           </button>
         </Reveal>
 
-        <Reveal delay={150} className="bg-white rounded-2xl p-4 md:p-6 shadow-md flex flex-col gap-3 md:gap-4">
-          <label className="text-xs md:text-sm font-medium flex items-center gap-2" style={{ color: COLORS.ink }}>
-            <Brush size={15} /> {t.customizer.drawTitle}
+        {/* CHANGED: p-4 -> p-3, gap-3 -> gap-2 */}
+        <Reveal delay={150} className="bg-white rounded-2xl p-3 md:p-6 shadow-md flex flex-col gap-2 md:gap-4">
+          <label className="text-[11px] md:text-sm font-medium flex items-center gap-2" style={{ color: COLORS.ink }}>
+            <Brush size={14} /> {t.customizer.drawTitle}
           </label>
-          {/* no-swipe: excluded from the full-page scroll gesture detection */}
           <div className="no-swipe">
             <canvas
               ref={canvasRef}
               width={400}
               height={220}
-              className="w-full rounded-xl border touch-none"
+              // CHANGED: أضفنا h-28 (ارتفاع أصغر) للجوال فقط، md:h-auto يعيد النسبة الأصلية على الديسكتوب
+              className="w-full h-28 md:h-auto rounded-xl border touch-none"
               style={{ borderColor: COLORS.cream, cursor: "crosshair" }}
               onMouseDown={start}
               onMouseMove={move}
@@ -919,23 +930,26 @@ function CustomizerSection({ sectionRef, t, lang }) {
               onTouchEnd={end}
             />
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 md:gap-2">
             {palette.map((c) => (
               <button
                 key={c}
                 onClick={() => setColor(c)}
-                className="w-6 h-6 rounded-full border-2"
+                // CHANGED: w-6 h-6 -> w-5 h-5
+                className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2"
                 style={{ background: c, borderColor: color === c ? COLORS.ink : "transparent" }}
               />
             ))}
             <input type="range" min="1" max="12" value={brush} onChange={(e) => setBrush(Number(e.target.value))} className="ms-2 flex-1" />
           </div>
-          <div className="flex gap-3">
-            <button onClick={clearCanvas} className="flex-1 py-2 rounded-full border text-sm flex items-center justify-center gap-1" style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}>
-              <Trash2 size={14} /> {t.customizer.clear}
+          {/* CHANGED: gap-3 -> gap-2 */}
+          <div className="flex gap-2 md:gap-3">
+            {/* CHANGED: py-2 -> py-1.5, text-sm -> text-xs */}
+            <button onClick={clearCanvas} className="flex-1 py-1.5 md:py-2 rounded-full border text-xs md:text-sm flex items-center justify-center gap-1" style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}>
+              <Trash2 size={13} /> {t.customizer.clear}
             </button>
-            <button onClick={downloadSketch} className="flex-1 py-2 rounded-full border text-sm flex items-center justify-center gap-1" style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}>
-              <Download size={14} /> {t.customizer.download}
+            <button onClick={downloadSketch} className="flex-1 py-1.5 md:py-2 rounded-full border text-xs md:text-sm flex items-center justify-center gap-1" style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}>
+              <Download size={13} /> {t.customizer.download}
             </button>
           </div>
         </Reveal>
