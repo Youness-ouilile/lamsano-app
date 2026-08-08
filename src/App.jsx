@@ -844,30 +844,22 @@ function CustomizerSection({ sectionRef, t, lang }) {
   const palette = [COLORS.ink, COLORS.primaryDark, COLORS.primary, COLORS.primaryLight, "#7A9E7E", "#A65D57"];
 
   return (
-    // CHANGED: justify-center -> justify-start md:justify-center, px/py مصغّرة على الجوال
-    <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-start md:justify-center px-3 md:px-10 py-3 md:py-24 overflow-y-auto">
-      {/* CHANGED: mb-4 -> mb-2 */}
+    // CHANGED: py-3 -> pt-20 pb-3 (على الجوال فقط) لإبعاد المحتوى عن الـ navbar الثابت
+    <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-start md:justify-center px-3 md:px-10 pt-20 pb-3 md:py-24 overflow-y-auto">
       <Reveal className="text-center mb-2 md:mb-10 max-w-xl shrink-0">
-        {/* CHANGED: text-xl -> text-lg, mb-1 -> mb-0.5 */}
         <h2 className="text-lg md:text-4xl font-semibold mb-0.5 md:mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.customizer.title}</h2>
-        {/* CHANGED: text-xs -> text-[11px] */}
         <p className="text-[11px] md:text-base opacity-70">{t.customizer.subtitle}</p>
       </Reveal>
 
-      {/* CHANGED: gap-4 -> gap-3 */}
       <div className="grid md:grid-cols-2 gap-3 md:gap-8 w-full max-w-4xl">
-        {/* CHANGED: p-4 -> p-3, gap-3 -> gap-2 */}
         <Reveal className="bg-white rounded-2xl p-3 md:p-6 shadow-md flex flex-col gap-2 md:gap-4">
           <div>
-            {/* CHANGED: text-xs -> text-[11px], mb-2 -> mb-1 */}
             <label className="text-[11px] md:text-sm font-medium block mb-1 md:mb-2" style={{ color: COLORS.ink }}>{t.customizer.type}</label>
-            {/* CHANGED: gap-3 -> gap-2 */}
             <div className="flex gap-2 md:gap-3">
               {["bag", "painting"].map((ty) => (
                 <button
                   key={ty}
                   onClick={() => setType(ty)}
-                  // CHANGED: px-4 py-2 -> px-3 py-1.5, text-xs -> text-[11px]
                   className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[11px] md:text-sm border"
                   style={{ borderColor: COLORS.primary, background: type === ty ? COLORS.primary : "transparent", color: type === ty ? "#fff" : COLORS.primaryDark }}
                 >
@@ -884,13 +876,11 @@ function CustomizerSection({ sectionRef, t, lang }) {
               onChange={(e) => setDesc(e.target.value)}
               placeholder={t.customizer.descPlaceholder}
               rows={2}
-              // CHANGED: p-3 -> p-2, text-sm -> text-xs
               className="w-full rounded-xl border p-2 md:p-3 text-xs md:text-sm outline-none"
               style={{ borderColor: COLORS.cream }}
             />
           </div>
 
-          {/* CHANGED: gap-3 -> gap-2 */}
           <div className="grid grid-cols-2 gap-2 md:gap-3">
             <div>
               <label className="text-[11px] md:text-sm font-medium block mb-1 md:mb-2" style={{ color: COLORS.ink }}>{t.customizer.nameLabel}</label>
@@ -902,13 +892,11 @@ function CustomizerSection({ sectionRef, t, lang }) {
             </div>
           </div>
 
-          {/* CHANGED: mt-2 -> mt-1, py-3 -> py-2.5, text-sm -> text-xs */}
           <button onClick={submit} className="mt-1 md:mt-2 w-full py-2.5 md:py-3 rounded-full text-white text-xs md:text-sm font-medium flex items-center justify-center gap-2" style={{ background: COLORS.primary }}>
             <Send size={14} /> {t.customizer.submit}
           </button>
         </Reveal>
 
-        {/* CHANGED: p-4 -> p-3, gap-3 -> gap-2 */}
         <Reveal delay={150} className="bg-white rounded-2xl p-3 md:p-6 shadow-md flex flex-col gap-2 md:gap-4">
           <label className="text-[11px] md:text-sm font-medium flex items-center gap-2" style={{ color: COLORS.ink }}>
             <Brush size={14} /> {t.customizer.drawTitle}
@@ -918,7 +906,6 @@ function CustomizerSection({ sectionRef, t, lang }) {
               ref={canvasRef}
               width={400}
               height={220}
-              // CHANGED: أضفنا h-28 (ارتفاع أصغر) للجوال فقط، md:h-auto يعيد النسبة الأصلية على الديسكتوب
               className="w-full h-28 md:h-auto rounded-xl border touch-none"
               style={{ borderColor: COLORS.cream, cursor: "crosshair" }}
               onMouseDown={start}
@@ -935,16 +922,13 @@ function CustomizerSection({ sectionRef, t, lang }) {
               <button
                 key={c}
                 onClick={() => setColor(c)}
-                // CHANGED: w-6 h-6 -> w-5 h-5
                 className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2"
                 style={{ background: c, borderColor: color === c ? COLORS.ink : "transparent" }}
               />
             ))}
             <input type="range" min="1" max="12" value={brush} onChange={(e) => setBrush(Number(e.target.value))} className="ms-2 flex-1" />
           </div>
-          {/* CHANGED: gap-3 -> gap-2 */}
           <div className="flex gap-2 md:gap-3">
-            {/* CHANGED: py-2 -> py-1.5, text-sm -> text-xs */}
             <button onClick={clearCanvas} className="flex-1 py-1.5 md:py-2 rounded-full border text-xs md:text-sm flex items-center justify-center gap-1" style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}>
               <Trash2 size={13} /> {t.customizer.clear}
             </button>
