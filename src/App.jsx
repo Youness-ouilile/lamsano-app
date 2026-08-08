@@ -5,11 +5,28 @@ import {
   MapPin, ShoppingCart, Menu, Image as ImageIcon, Brush,
 } from "lucide-react";
 
+// lucide-react dropped brand/logo icons (Instagram, Facebook, etc.) from its
+// set some versions ago — importing "Instagram" from it resolves to
+// `undefined`, and rendering an undefined component crashes the whole React
+// tree (blank white screen, no visible error). A small inline SVG avoids
+// depending on the icon library for this one brand mark.
+function InstagramIcon({ size = 18, color = "currentColor" }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
+
 /* =========================================================================
    EDITABLE DATA — replace with your real products, images, team & number
    ========================================================================= */
 
-const WHATSAPP_NUMBER = "212613798674"; // TODO: replace with your real WhatsApp number (no +, no spaces)
+const WHATSAPP_NUMBER = "212607141572"; // TODO: replace with your real WhatsApp number (no +, no spaces)
+const INSTAGRAM_URL = "https://www.instagram.com/lamsano____sym?igsh=MTJ2Mmd1Z2NvY2Vydw=="; // TODO: replace with your real Instagram profile URL
+const EMAIL_ADDRESS = "lamsanosym6@gmail.com"; // TODO: replace with your real email address
 
 // image: null -> shows an elegant gradient placeholder. Set to a URL to use a real photo.
 const PRODUCTS = [
@@ -194,18 +211,13 @@ function PriceTag({ price }) {
 /* =========================================================================
    NAVBAR
    ========================================================================= */
-function Navbar({ t, lang, setLang, sectionsRef, page, setPage, cartCount, onOpenCart }) {
+function Navbar({ t, lang, setLang, page, setPage, cartCount, onOpenCart, activeKey, goToSection }) {
   const [open, setOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
 
   const go = (key) => {
     setOpen(false);
-    if (page !== "home") {
-      setPage("home");
-      setTimeout(() => sectionsRef.current[key]?.scrollIntoView({ behavior: "smooth" }), 60);
-    } else {
-      sectionsRef.current[key]?.scrollIntoView({ behavior: "smooth" });
-    }
+    goToSection(key);
   };
 
   const links = ["home", "products", "customizer", "about", "team", "testimonials", "contact"];
@@ -219,17 +231,25 @@ function Navbar({ t, lang, setLang, sectionsRef, page, setPage, cartCount, onOpe
         LAMSANO <span style={{ color: COLORS.primary }}>SYM</span>
       </button>
 
-      <div className="hidden lg:flex items-center gap-6">
-        {links.map((key) => (
-          <button
-            key={key}
-            onClick={() => go(key)}
-            className="text-sm tracking-wide hover:opacity-70 transition-opacity"
-            style={{ color: COLORS.ink }}
-          >
-            {t.nav[key]}
-          </button>
-        ))}
+      <div className="hidden lg:flex items-center gap-1">
+        {links.map((key) => {
+          const isActive = page === "home" && activeKey === key;
+          return (
+            <button
+              key={key}
+              onClick={() => go(key)}
+              className="relative text-sm tracking-wide px-4 py-1.5 rounded-full transition-colors duration-300"
+              style={{
+                color: isActive ? COLORS.white : COLORS.ink,
+                background: isActive ? COLORS.primary : "transparent",
+              }}
+              onMouseEnter={(e) => { if (!isActive) e.currentTarget.style.background = COLORS.cream; }}
+              onMouseLeave={(e) => { if (!isActive) e.currentTarget.style.background = "transparent"; }}
+            >
+              {t.nav[key]}
+            </button>
+          );
+        })}
       </div>
 
       <div className="flex items-center gap-2 md:gap-3">
@@ -276,11 +296,23 @@ function Navbar({ t, lang, setLang, sectionsRef, page, setPage, cartCount, onOpe
 
       {open && (
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg flex flex-col lg:hidden" style={{ borderTop: `1px solid ${COLORS.cream}` }}>
-          {links.map((key) => (
-            <button key={key} onClick={() => go(key)} className="text-start px-6 py-3 text-sm border-b" style={{ color: COLORS.ink, borderColor: COLORS.cream }}>
-              {t.nav[key]}
-            </button>
-          ))}
+          {links.map((key) => {
+            const isActive = page === "home" && activeKey === key;
+            return (
+              <button
+                key={key}
+                onClick={() => go(key)}
+                className="text-start px-6 py-3 text-sm border-b flex items-center gap-3"
+                style={{ color: isActive ? COLORS.primaryDark : COLORS.ink, borderColor: COLORS.cream, background: isActive ? COLORS.cream : "transparent" }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: isActive ? COLORS.primary : "transparent" }}
+                />
+                {t.nav[key]}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
@@ -1010,7 +1042,7 @@ function ContactSection({ sectionRef, t }) {
 
         <div className="flex flex-col gap-4 items-center mb-8">
           <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.ink }}><Phone size={15} /> +{WHATSAPP_NUMBER}</div>
-          <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.ink }}><Mail size={15} /> contact@lamsanosym.com</div>
+          <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.ink }}><Mail size={15} /> {EMAIL_ADDRESS}</div>
           <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.ink }}><MapPin size={15} /> Morocco</div>
         </div>
 
@@ -1018,11 +1050,34 @@ function ContactSection({ sectionRef, t }) {
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-white text-sm"
+          className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-white text-sm mb-5"
           style={{ background: COLORS.primary }}
         >
           <Send size={15} /> {t.contact.whatsappBtn}
         </a>
+
+        <div className="flex items-center justify-center gap-4">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            className="w-11 h-11 rounded-full flex items-center justify-center border transition-transform hover:scale-105"
+            style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}
+          >
+            <InstagramIcon size={18} color={COLORS.primaryDark} />
+          </a>
+          <a
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}`}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Email"
+            className="w-11 h-11 rounded-full flex items-center justify-center border transition-transform hover:scale-105"
+            style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}
+          >
+            <Mail size={18} />
+          </a>
+        </div>
       </Reveal>
     </section>
   );
@@ -1035,8 +1090,7 @@ function ContactSection({ sectionRef, t }) {
    - blocks the browser's native pull-to-refresh / rubber-band scroll, which
      was causing a full page reload when swiping up at the top of the page
    ========================================================================= */
-function FullPageScroller({ children }) {
-  const [current, setCurrent] = useState(0);
+function FullPageScroller({ children, current, onChange }) {
   const [animating, setAnimating] = useState(false);
   const containerRef = useRef(null);
   const touchStartY = useRef(null);
@@ -1045,9 +1099,9 @@ function FullPageScroller({ children }) {
   const goTo = useCallback((index) => {
     if (index < 0 || index >= total || animating) return;
     setAnimating(true);
-    setCurrent(index);
+    onChange(index);
     setTimeout(() => setAnimating(false), 900);
-  }, [total, animating]);
+  }, [total, animating, onChange]);
 
   useEffect(() => {
     const isNoSwipe = (target) => target && target.closest && target.closest(".no-swipe");
@@ -1072,8 +1126,6 @@ function FullPageScroller({ children }) {
       touchStartY.current = e.touches[0].clientY;
     };
     const onTouchMove = (e) => {
-      // Prevent the native pull-to-refresh / rubber-band scroll on mobile,
-      // which otherwise reloads the page when swiping up at the top slide.
       if (touchStartY.current === null) return;
       e.preventDefault();
     };
@@ -1102,8 +1154,6 @@ function FullPageScroller({ children }) {
     };
   }, [current, animating, goTo]);
 
-  FullPageScroller.goToIndex = goTo;
-
   return (
     <div ref={containerRef} className="fullpage-viewport">
       <div
@@ -1126,17 +1176,25 @@ export default function App() {
   const [page, setPage] = useState("home");
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
-  // Lifted to the app root: the product modal uses position:fixed, and
-  // rendering it *inside* the FullPageScroller (whose track is transformed)
-  // broke fixed positioning, which is why it never appeared. Rendering it
-  // once here, as a sibling of everything else, fixes that.
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const SLIDE_KEYS = ["home", "products", "customizer", "about", "team", "testimonials", "contact", "footer"];
+  const [slideIndex, setSlideIndex] = useState(0);
+  const activeKey = SLIDE_KEYS[slideIndex];
 
   const t = T[lang];
   const dir = t.dir;
 
-  const sectionsRef = useRef({});
-  const setRef = (key) => (el) => { sectionsRef.current[key] = el; };
+  const goToSection = useCallback((key) => {
+    const index = SLIDE_KEYS.indexOf(key);
+    if (index === -1) return;
+    if (page !== "home") {
+      setPage("home");
+      setTimeout(() => setSlideIndex(index), 60);
+    } else {
+      setSlideIndex(index);
+    }
+  }, [page]);
 
   const addToCart = useCallback((product) => {
     setCart((prev) => {
@@ -1149,9 +1207,9 @@ export default function App() {
 
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
 
-  const goProducts = () => sectionsRef.current["products"]?.scrollIntoView({ behavior: "smooth" });
+  const goProducts = () => goToSection("products");
   const goAllProducts = () => { setPage("all"); window.scrollTo({ top: 0 }); };
-  const goHome = () => { setPage("home"); setTimeout(() => sectionsRef.current["products"]?.scrollIntoView({ behavior: "smooth" }), 60); };
+  const goHome = () => goToSection("products");
 
   return (
     <div dir={dir} style={{ fontFamily: "'Cormorant Garamond', serif", color: COLORS.ink }}>
@@ -1192,20 +1250,21 @@ export default function App() {
 
       <Navbar
         t={t} lang={lang} setLang={setLang}
-        sectionsRef={sectionsRef} page={page} setPage={setPage}
+        page={page} setPage={setPage}
         cartCount={cartCount} onOpenCart={() => setCartOpen(true)}
+        activeKey={activeKey} goToSection={goToSection}
       />
 
       {page === "home" ? (
-        <FullPageScroller>
-          <HomeSection sectionRef={setRef("home")} t={t} lang={lang} goProducts={goProducts} />
-          <ProductsSection sectionRef={setRef("products")} t={t} lang={lang} addToCart={addToCart} goAllProducts={goAllProducts} openProduct={setSelectedProduct} />
-          <CustomizerSection sectionRef={setRef("customizer")} t={t} lang={lang} />
-          <AboutSection sectionRef={setRef("about")} t={t} />
-          <TeamSection sectionRef={setRef("team")} t={t} lang={lang} />
-          <TestimonialsSection sectionRef={setRef("testimonials")} t={t} lang={lang} />
-          <ContactSection sectionRef={setRef("contact")} t={t} />
-          <div className="fullpage-slide">
+        <FullPageScroller current={slideIndex} onChange={setSlideIndex}>
+          <HomeSection t={t} lang={lang} goProducts={goProducts} />
+          <ProductsSection t={t} lang={lang} addToCart={addToCart} goAllProducts={goAllProducts} openProduct={setSelectedProduct} />
+          <CustomizerSection t={t} lang={lang} />
+          <AboutSection t={t} />
+          <TeamSection t={t} lang={lang} />
+          <TestimonialsSection t={t} lang={lang} />
+          <ContactSection t={t} />
+          <div className="fullpage-slide-footer">
             <footer className="h-full flex items-center justify-center text-center py-6 text-xs opacity-60" style={{ background: COLORS.white }}>
               Lamsano Sym © {new Date().getFullYear()} — {t.footer.rights}
             </footer>
