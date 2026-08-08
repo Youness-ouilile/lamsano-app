@@ -1087,6 +1087,11 @@ function ContactSection({ sectionRef, t }) {
             <Mail size={18} />
           </a>
         </div>
+        <div className="fullpage-slide-footer">
+            <footer className="h-full flex items-center justify-center text-center py-6 text-xs opacity-60" >
+              Lamsano Sym © {new Date().getFullYear()} — {t.footer.rights}
+            </footer>
+          </div>
       </Reveal>
     </section>
   );
@@ -1273,11 +1278,7 @@ export default function App() {
           <TeamSection t={t} lang={lang} />
           <TestimonialsSection t={t} lang={lang} />
           <ContactSection t={t} />
-          <div className="fullpage-slide-footer">
-            <footer className="h-full flex items-center justify-center text-center py-6 text-xs opacity-60" style={{ background: COLORS.white }}>
-              Lamsano Sym © {new Date().getFullYear()} — {t.footer.rights}
-            </footer>
-          </div>
+          
         </FullPageScroller>
       ) : (
         <AllProductsPage t={t} lang={lang} addToCart={addToCart} goHome={goHome} openProduct={setSelectedProduct} />
