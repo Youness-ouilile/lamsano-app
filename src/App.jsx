@@ -30,28 +30,28 @@ const EMAIL_ADDRESS = "lamsanosym6@gmail.com"; // TODO: replace with your real e
 
 // image: null -> shows an elegant gradient placeholder. Set to a URL to use a real photo.
 const PRODUCTS = [
-  { id: 1, category: "bag", image: '/products/1000140605.png', colors: ["#B08A4A", "#8C6A3B"], price: 450, rating: 4.8,
+  { id: 1, category: "bag", image: '/products/1000140605.png', colors: ["#B08A4A", "#8C6A3B"], price: 150, rating: 4.8,
     name: { ar: "حقيبة الغروب", fr: "Sac Couchant", en: "Sunset Bag" },
     desc: { ar: "جلد طبيعي بلمسة ذهبية، مصنوعة يدويًا بعناية فائقة.", fr: "Cuir naturel à touche dorée, façonné à la main avec le plus grand soin.", en: "Natural leather with a golden touch, handcrafted with the utmost care." } },
-  { id: 2, category: "bag", image: '/products/IMG-20260728-WA0034.jpg', colors: ["#C9A46C", "#8C6A3B"], price: 520, rating: 4.6,
+  { id: 2, category: "bag", image: '/products/IMG-20260728-WA0034.jpg', colors: ["#C9A46C", "#8C6A3B"], price: 150, rating: 4.6,
     name: { ar: "حقيبة الأطلس", fr: "Sac Atlas", en: "Atlas Bag" },
     desc: { ar: "تصميم أنيق مستوحى من التراث، بخياطة يدوية دقيقة.", fr: "Design élégant inspiré du patrimoine, à la couture manuelle précise.", en: "An elegant design inspired by heritage, with precise hand-stitching." } },
-  { id: 3, category: "bag", image: '/products/IMG-20260728-WA0038.jpg', colors: ["#8C6A3B", "#5C4527"], price: 390, rating: 4.7,
+  { id: 3, category: "bag", image: '/products/IMG-20260728-WA0038.jpg', colors: ["#8C6A3B", "#5C4527"], price: 90, rating: 4.7,
     name: { ar: "حقيبة الظل", fr: "Sac Ombre", en: "Shadow Bag" },
     desc: { ar: "خطوط بسيطة وجلد فاخر لإطلالة يومية أنيقة.", fr: "Lignes épurées et cuir luxueux pour un look quotidien raffiné.", en: "Clean lines and luxurious leather for an elegant everyday look." } },
-  { id: 4, category: "art", image: '/products/1000141182.png', colors: ["#EAD7C2", "#B08A4A"], price: 680, rating: 4.9,
+  { id: 4, category: "art", image: '/products/1000141182.png', colors: ["#EAD7C2", "#B08A4A"], price: 250, rating: 4.9,
     name: { ar: "لوحة الصحراء", fr: "Toile du Désert", en: "Desert Canvas" },
     desc: { ar: "ألوان دافئة تحاكي كثبان الصحراء عند الغروب.", fr: "Des teintes chaudes évoquant les dunes du désert au coucher du soleil.", en: "Warm tones echoing desert dunes at sunset." } },
-  { id: 5, category: "art", image: null, colors: ["#D8C0A0", "#8C6A3B"], price: 590, rating: 4.5,
+  { id: 5, category: "art", image: null, colors: ["#D8C0A0", "#8C6A3B"], price: 230, rating: 4.5,
     name: { ar: "لوحة الأفق", fr: "Toile Horizon", en: "Horizon Canvas" },
     desc: { ar: "تجريد هادئ يعكس التقاء الأرض بالسماء.", fr: "Une abstraction paisible où la terre rencontre le ciel.", en: "A calm abstraction where land meets sky." } },
-  { id: 7, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
+  { id: 7, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 300, rating: 4.7,
     name: { ar: "لوحة النبض", fr: "Toile Pulsation", en: "Pulse Canvas" },
     desc: { ar: "حركة فرشاة نابضة بالحياة على قماش فني أصيل.", fr: "Un mouvement de pinceau vibrant sur toile artisanale authentique.", en: "A vibrant brush movement on an authentic artisan canvas." } },
-  { id: 8, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
+  { id: 8, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 250, rating: 4,
     name: { ar: "لوحة النبض", fr: "Toile Pulsation", en: "Pulse Canvas" },
     desc: { ar: "حركة فرشاة نابضة بالحياة على قماش فني أصيل.", fr: "Un mouvement de pinceau vibrant sur toile artisanale authentique.", en: "A vibrant brush movement on an authentic artisan canvas." } },
-  { id: 9, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
+  { id: 9, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 250, rating: 4,
     name: { ar: "لوحة النبض", fr: "Toile Pulsation", en: "Pulse Canvas" },
     desc: { ar: "حركة فرشاة نابضة بالحياة على قماش فني أصيل.", fr: "Un mouvement de pinceau vibrant sur toile artisanale authentique.", en: "A vibrant brush movement on an authentic artisan canvas." } },
 ];
@@ -98,7 +98,7 @@ const T = {
     team: { title: "فريقنا", subtitle: "خمسة أفراد يجمعهم شغف الحرفة والفن" },
     testimonials: { title: "ماذا يقول عملاؤنا" },
     contact: { title: "تواصل معنا", subtitle: "يسعدنا استقبال استفساراتكم وطلباتكم", whatsappBtn: "راسلنا على واتساب" },
-    cart: { title: "سلة الطلبات", empty: "سلتك فارغة حاليًا", total: "المجموع", checkout: "إرسال الطلب عبر واتساب", remove: "حذف" },
+    cart: { title: "سلة الطلبات", empty: "سلتك فارغة حاليًا", total: "المجموع", checkout: "إرسال الطلب عبر واتساب", remove: "حذف", clearAll: "إفراغ السلة" },
     footer: { rights: "جميع الحقوق محفوظة" },
   },
   fr: {
@@ -112,7 +112,7 @@ const T = {
     team: { title: "Notre équipe", subtitle: "Cinq personnes réunies par la passion de l'artisanat et de l'art" },
     testimonials: { title: "Ce que disent nos clients" },
     contact: { title: "Contactez-nous", subtitle: "Nous sommes ravis de recevoir vos questions et commandes", whatsappBtn: "Écrivez-nous sur WhatsApp" },
-    cart: { title: "Votre panier", empty: "Votre panier est vide", total: "Total", checkout: "Envoyer la commande via WhatsApp", remove: "Retirer" },
+    cart: { title: "Votre panier", empty: "Votre panier est vide", total: "Total", checkout: "Envoyer la commande via WhatsApp", remove: "Retirer", clearAll: "Vider le panier" },
     footer: { rights: "Tous droits réservés" },
   },
   en: {
@@ -126,7 +126,7 @@ const T = {
     team: { title: "Our Team", subtitle: "Five people united by a passion for craft and art" },
     testimonials: { title: "What Our Clients Say" },
     contact: { title: "Get in Touch", subtitle: "We'd love to hear your questions and orders", whatsappBtn: "Message us on WhatsApp" },
-    cart: { title: "Your Cart", empty: "Your cart is currently empty", total: "Total", checkout: "Send order via WhatsApp", remove: "Remove" },
+   cart: { title: "Your Cart", empty: "Your cart is currently empty", total: "Total", checkout: "Send order via WhatsApp", remove: "Remove", clearAll: "Clear All" },
     footer: { rights: "All rights reserved" },
   },
 };
@@ -335,6 +335,7 @@ function CartPanel({ open, onClose, cart, setCart, t, lang }) {
     );
   };
   const removeItem = (id) => setCart((prev) => prev.filter((i) => i.id !== id));
+  const clearCart = () => setCart([]);
 
   const sendOrder = () => {
     const lines = cart.map((i) => `• ${i.name[lang]} x${i.qty} — ${i.price * i.qty} DH`).join("\n");
@@ -384,8 +385,8 @@ function CartPanel({ open, onClose, cart, setCart, t, lang }) {
         </div>
 
         {cart.length > 0 && (
-          <div className="p-5" style={{ borderTop: `1px solid ${COLORS.cream}` }}>
-            <div className="flex justify-between mb-3 text-sm font-medium">
+          <div className="p-5 flex flex-col gap-3" style={{ borderTop: `1px solid ${COLORS.cream}` }}>
+            <div className="flex justify-between text-sm font-medium">
               <span>{t.cart.total}</span>
               <PriceTag price={total} />
             </div>
@@ -396,13 +397,19 @@ function CartPanel({ open, onClose, cart, setCart, t, lang }) {
             >
               <Send size={15} /> {t.cart.checkout}
             </button>
+            <button
+              onClick={clearCart}
+              className="w-full py-2.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 border"
+              style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}
+            >
+              <Trash2 size={14} /> {t.cart.clearAll}
+            </button>
           </div>
         )}
       </div>
     </>
   );
 }
-
 /* =========================================================================
    PRODUCT MODAL (split view) — rendered once, at the App root, so it is
    never trapped inside a transformed ancestor (fixes it not showing).
@@ -963,38 +970,40 @@ function TeamSection({ sectionRef, t, lang }) {
   return (
     <section
       ref={sectionRef}
-      className="h-full flex flex-col items-center justify-center px-3 md:px-6 py-5 md:py-24 overflow-y-auto"
+      className="h-full flex flex-col items-center justify-center px-3 md:px-6 py-3 md:py-24 overflow-hidden"
       style={{ background: COLORS.cream }}
     >
-      <Reveal className="text-center mb-3 md:mb-12 max-w-xl shrink-0">
-        <h2 className="text-lg md:text-4xl font-semibold mb-1 md:mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>
+      <Reveal className="text-center mb-2 md:mb-12 max-w-xl shrink-0">
+        <h2 className="text-base md:text-4xl font-semibold mb-0.5 md:mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>
           {t.team.title}
         </h2>
-        <p className="text-[11px] md:text-base opacity-70">{t.team.subtitle}</p>
+        <p className="text-[10px] md:text-base opacity-70">{t.team.subtitle}</p>
       </Reveal>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap justify-center gap-2 md:gap-6 max-w-7xl w-full">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:flex md:flex-wrap justify-center gap-1.5 md:gap-6 max-w-7xl w-full">
         {TEAM.map((m, i) => (
           <Reveal key={m.id} delay={i * 80}>
             <div
               onClick={() => toggle(m.id)}
               onMouseEnter={() => setRevealed((prev) => ({ ...prev, [m.id]: true }))}
               onMouseLeave={() => setRevealed((prev) => ({ ...prev, [m.id]: false }))}
-              className="w-full md:w-56 relative group overflow-hidden bg-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg cursor-pointer"
+              className="w-full md:w-56 relative group overflow-hidden bg-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg cursor-pointer rounded-lg md:rounded-none"
             >
-              <div className="w-full aspect-[4/5] md:h-80 overflow-hidden">
+              <div className="w-full aspect-[3/4] md:aspect-auto md:h-80 overflow-hidden">
                 <img
                   src={m.image}
                   alt={m.name}
-                  className={`w-full h-full object-cover object-center transition-all duration-500 ${revealed[m.id] ? "grayscale-0" : "grayscale"}`}
+                  className={`w-full h-full object-cover object-center transition-all duration-500 grayscale-0 ${
+                    revealed[m.id] ? "md:grayscale-0" : "md:grayscale"
+                  }`}
                 />
               </div>
 
-              <div className="absolute bottom-1.5 left-1.5 right-1.5 md:bottom-3 md:left-3 md:right-3 bg-white p-1.5 md:p-3 shadow-md">
-                <p className="text-[10px] md:text-sm font-bold truncate" style={{ color: COLORS.ink }}>
+              <div className="absolute bottom-1 left-1 right-1 md:bottom-3 md:left-3 md:right-3 bg-white p-1 md:p-3 shadow-md rounded md:rounded-none">
+                <p className="text-[8px] md:text-sm font-bold truncate" style={{ color: COLORS.ink }}>
                   {m.name}
                 </p>
-                <p className="text-[9px] md:text-xs text-gray-500 truncate mt-0.5">
+                <p className="text-[7px] md:text-xs text-gray-500 truncate mt-0.5">
                   {m.role[lang]}
                 </p>
               </div>
