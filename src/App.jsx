@@ -31,48 +31,21 @@ const PRODUCTS = [
   { id: 7, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
     name: { ar: "لوحة النبض", fr: "Toile Pulsation", en: "Pulse Canvas" },
     desc: { ar: "حركة فرشاة نابضة بالحياة على قماش فني أصيل.", fr: "Un mouvement de pinceau vibrant sur toile artisanale authentique.", en: "A vibrant brush movement on an authentic artisan canvas." } },
- { id: 8, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
+  { id: 8, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
     name: { ar: "لوحة النبض", fr: "Toile Pulsation", en: "Pulse Canvas" },
     desc: { ar: "حركة فرشاة نابضة بالحياة على قماش فني أصيل.", fr: "Un mouvement de pinceau vibrant sur toile artisanale authentique.", en: "A vibrant brush movement on an authentic artisan canvas." } },
- { id: 9, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
+  { id: 9, category: "art", image: null, colors: ["#C9A46C", "#B08A4A"], price: 610, rating: 4.7,
     name: { ar: "لوحة النبض", fr: "Toile Pulsation", en: "Pulse Canvas" },
     desc: { ar: "حركة فرشاة نابضة بالحياة على قماش فني أصيل.", fr: "Un mouvement de pinceau vibrant sur toile artisanale authentique.", en: "A vibrant brush movement on an authentic artisan canvas." } },
-
-  ];
+];
 
 // TODO: replace with your five real team members (name & role)
 const TEAM = [
- 
-  {
-    id: 3,
-    name: "Sanae Amentag",
-    role: { en: "Finance Manage", fr: "Gestion financière", ar: "إدارة الشؤون المالية" },
-    image: "/team/IMG-20251223-WA0112.jpg"
-  },
-  {
-    id: 4,
-    name: "Asmae Aben",
-    role: { en: "Marketing Manager", fr: "Responsable marketing", ar: "مديرة تسويق" },
-    image: "/team/IMG-20260729-WA0021.jpg"
-  },
-   {
-    id: 1,
-    name: "Samira Amkhaou",
-    role: { en: "Team Leader", fr: "Chef d'équipe", ar: "قائد الفريق" },
-    image: "/team/IMG-20260212-WA0030.jpg"
-  },
- {
-    id: 5,
-    name: "Sana Fhad",
-    role: { en: "Co-Finance & Operations", fr: "Co-responsable des finances et des opérations", ar: "التمويل والعمليات المشتركة" },
-    image: "/team/IMG-20260729-WA0022.jpg"
-  },
-  {
-    id: 6,
-    name: "Hiba Ben Thami",
-    role: { en: "Social Media Manager", fr: "Responsable des réseaux sociaux", ar: "مديرة وسائل التواصل الاجتماعي" },
-    image: "/team/IMG-20260731-WA0000.jpg"
-  }
+  { id: 3, name: "Sanae Amentag", role: { en: "Finance Manage", fr: "Gestion financière", ar: "إدارة الشؤون المالية" }, image: "/team/IMG-20251223-WA0112.jpg" },
+  { id: 4, name: "Asmae Aben", role: { en: "Marketing Manager", fr: "Responsable marketing", ar: "مديرة تسويق" }, image: "/team/IMG-20260729-WA0021.jpg" },
+  { id: 1, name: "Samira Amkhaou", role: { en: "Team Leader", fr: "Chef d'équipe", ar: "قائد الفريق" }, image: "/team/IMG-20260212-WA0030.jpg" },
+  { id: 5, name: "Sana Fhad", role: { en: "Co-Finance & Operations", fr: "Co-responsable des finances et des opérations", ar: "التمويل والعمليات المشتركة" }, image: "/team/IMG-20260729-WA0022.jpg" },
+  { id: 6, name: "Hiba Ben Thami", role: { en: "Social Media Manager", fr: "Responsable des réseaux sociaux", ar: "مديرة وسائل التواصل الاجتماعي" }, image: "/team/IMG-20260731-WA0000.jpg" },
 ];
 
 const TESTIMONIALS = [
@@ -101,7 +74,7 @@ const T = {
     dir: "rtl",
     nav: { home: "الرئيسية", products: "المنتجات", customizer: "التخصيص", about: "من نحن", team: "الفريق", testimonials: "آراء العملاء", contact: "تواصل", cart: "السلة" },
     home: { tagline: "حيث تتحول اللمسة إلى قطعة فنية", cta: "اكتشف المجموعة" },
-    products: { title: "منتجاتنا", subtitle: "قطع مختارة بعناية، حقائب جلدية ولوحات فنية أصيلة", explore: "اكتشف المزيد", addToCart: "أضف إلى السلة", close: "إغلاق" },
+    products: { title: "منتجاتنا", subtitle: "قطع مختارة بعناية، حقائب جلدية ولوحات فنية أصيلة", explore: "اكتشف المزيد", addToCart: "أضف إلى السلة", close: "إغلاق", viewAll: "عرض جميع المنتجات" },
     allProducts: { title: "كل المنتجات", back: "عودة للرئيسية", all: "الكل", bags: "الحقائب", art: "اللوحات" },
     customizer: { title: "خصص طلبك", subtitle: "صف لنا فكرتك أو ارسمها بنفسك", type: "نوع المنتج", bag: "حقيبة يد", painting: "لوحة فنية", descLabel: "وصف الطلب", descPlaceholder: "اكتب تفاصيل التصميم الذي تريده...", nameLabel: "الاسم الكامل", namePlaceholder: "اسمك", phoneLabel: "رقم الهاتف", phonePlaceholder: "رقم للتواصل", drawTitle: "أو ارسم تصميمك", clear: "مسح", download: "تحميل الرسم", color: "اللون", size: "حجم الفرشاة", submit: "إرسال عبر واتساب" },
     about: { title: "من نحن", text: "Lamsano Sym مشروع حرفي يجمع بين لمسة الجلد الأصيل وروح اللوحة الفنية. كل قطعة تُصنع يدويًا بشغف، لتحمل بين طياتها قصة فريدة تليق بذائقتكم." },
@@ -115,7 +88,7 @@ const T = {
     dir: "ltr",
     nav: { home: "Accueil", products: "Produits", customizer: "Personnaliser", about: "À propos", team: "Équipe", testimonials: "Avis", contact: "Contact", cart: "Panier" },
     home: { tagline: "Où chaque geste devient une œuvre d'art", cta: "Découvrir la collection" },
-    products: { title: "Nos Produits", subtitle: "Des pièces sélectionnées avec soin, sacs en cuir et toiles authentiques", explore: "Voir plus", addToCart: "Ajouter au panier", close: "Fermer" },
+    products: { title: "Nos Produits", subtitle: "Des pièces sélectionnées avec soin, sacs en cuir et toiles authentiques", explore: "Voir plus", addToCart: "Ajouter au panier", close: "Fermer", viewAll: "Voir tous les produits" },
     allProducts: { title: "Tous les produits", back: "Retour à l'accueil", all: "Tous", bags: "Sacs", art: "Toiles" },
     customizer: { title: "Personnalisez votre commande", subtitle: "Décrivez votre idée ou dessinez-la vous-même", type: "Type de produit", bag: "Sac à main", painting: "Toile", descLabel: "Description de la commande", descPlaceholder: "Décrivez le design que vous souhaitez...", nameLabel: "Nom complet", namePlaceholder: "Votre nom", phoneLabel: "Téléphone", phonePlaceholder: "Numéro de contact", drawTitle: "Ou dessinez votre design", clear: "Effacer", download: "Télécharger le dessin", color: "Couleur", size: "Taille du pinceau", submit: "Envoyer via WhatsApp" },
     about: { title: "À propos", text: "Lamsano Sym est un projet artisanal qui unit la touche du cuir authentique à l'âme de l'œuvre d'art. Chaque pièce est façonnée à la main avec passion, portant en elle une histoire unique qui vous ressemble." },
@@ -129,7 +102,7 @@ const T = {
     dir: "ltr",
     nav: { home: "Home", products: "Products", customizer: "Customizer", about: "About Us", team: "Team", testimonials: "Reviews", contact: "Contact", cart: "Cart" },
     home: { tagline: "Where every touch becomes a work of art", cta: "Discover the Collection" },
-    products: { title: "Our Products", subtitle: "Carefully curated pieces, leather bags and authentic canvases", explore: "Discover More", addToCart: "Add to Cart", close: "Close" },
+    products: { title: "Our Products", subtitle: "Carefully curated pieces, leather bags and authentic canvases", explore: "Discover More", addToCart: "Add to Cart", close: "Close", viewAll: "View All Products" },
     allProducts: { title: "All Products", back: "Back to Home", all: "All", bags: "Bags", art: "Canvases" },
     customizer: { title: "Customize Your Order", subtitle: "Describe your idea, or draw it yourself", type: "Product Type", bag: "Handbag", painting: "Canvas", descLabel: "Order Description", descPlaceholder: "Describe the design you'd like...", nameLabel: "Full Name", namePlaceholder: "Your name", phoneLabel: "Phone Number", phonePlaceholder: "Contact number", drawTitle: "Or sketch your design", clear: "Clear", download: "Download Sketch", color: "Color", size: "Brush size", submit: "Send via WhatsApp" },
     about: { title: "About Us", text: "Lamsano Sym is a handcrafted project uniting the touch of authentic leather with the soul of fine art. Every piece is made by hand with passion, carrying a unique story that suits your taste." },
@@ -242,7 +215,7 @@ function Navbar({ t, lang, setLang, sectionsRef, page, setPage, cartCount, onOpe
       className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 md:px-10 py-3 backdrop-blur-md"
       style={{ background: "rgba(255,255,255,0.82)", borderBottom: `1px solid ${COLORS.cream}` }}
     >
-      <button onClick={() => go("home")} className="text-xl md:text-2xl font-bold tracking-wide" style={{ color: COLORS.primaryDark }}>
+      <button onClick={() => go("home")} className="text-lg md:text-2xl font-bold tracking-wide whitespace-nowrap" style={{ color: COLORS.primaryDark }}>
         LAMSANO <span style={{ color: COLORS.primary }}>SYM</span>
       </button>
 
@@ -259,7 +232,7 @@ function Navbar({ t, lang, setLang, sectionsRef, page, setPage, cartCount, onOpe
         ))}
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 md:gap-3">
         <div className="relative">
           <button
             onClick={() => setLangOpen((v) => !v)}
@@ -269,12 +242,12 @@ function Navbar({ t, lang, setLang, sectionsRef, page, setPage, cartCount, onOpe
             <Globe size={15} /> {lang.toUpperCase()}
           </button>
           {langOpen && (
-            <div className="absolute mt-2 bg-white shadow-lg rounded-lg overflow-hidden border" style={{ borderColor: COLORS.cream, insetInlineEnd: 0 }}>
+            <div className="absolute mt-2 bg-white shadow-lg rounded-lg overflow-hidden border z-50" style={{ borderColor: COLORS.cream, insetInlineEnd: 0 }}>
               {["ar", "fr", "en"].map((l) => (
                 <button
                   key={l}
                   onClick={() => { setLang(l); setLangOpen(false); }}
-                  className="block w-full px-4 py-2 text-sm hover:opacity-70 text-start"
+                  className="block w-full px-4 py-2 text-sm hover:opacity-70 text-start whitespace-nowrap"
                   style={{ color: COLORS.ink, background: l === lang ? COLORS.cream : "transparent" }}
                 >
                   {l === "ar" ? "العربية" : l === "fr" ? "Français" : "English"}
@@ -322,7 +295,7 @@ function CartPanel({ open, onClose, cart, setCart, t, lang }) {
   useEffect(() => { if (open) setMounted(true); }, [open]);
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
 
-  if (!mounted) return null; // never rendered until the cart button is clicked at least once
+  if (!mounted) return null;
 
   const updateQty = (id, delta) => {
     setCart((prev) =>
@@ -399,23 +372,24 @@ function CartPanel({ open, onClose, cart, setCart, t, lang }) {
 }
 
 /* =========================================================================
-   PRODUCT MODAL (split view)
+   PRODUCT MODAL (split view) — rendered once, at the App root, so it is
+   never trapped inside a transformed ancestor (fixes it not showing).
    ========================================================================= */
 function ProductModal({ product, onClose, addToCart, t, lang }) {
   if (!product) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={onClose}>
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50" onClick={onClose}>
       <div
         onClick={(e) => e.stopPropagation()}
         className="bg-white rounded-2xl overflow-hidden w-full max-w-3xl flex flex-col md:flex-row shadow-2xl max-h-[90vh]"
       >
-        <div className="md:w-1/2 h-56 md:h-auto">
+        <div className="md:w-1/2 h-56 md:h-auto shrink-0">
           <ProductSwatch product={product} />
         </div>
-        <div className="md:w-1/2 p-6 md:p-8 flex flex-col gap-4 relative overflow-y-auto">
+        <div className="md:w-1/2 p-6 md:p-8 flex flex-col gap-3 md:gap-4 relative overflow-y-auto">
           <button onClick={onClose} className="absolute top-4 end-4"><X size={20} /></button>
           <span className="text-xs uppercase tracking-widest opacity-60">{product.category === "bag" ? t.allProducts.bags : t.allProducts.art}</span>
-          <h3 className="text-2xl font-semibold" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{product.name[lang]}</h3>
+          <h3 className="text-xl md:text-2xl font-semibold" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{product.name[lang]}</h3>
           <Stars rating={product.rating} />
           <p className="text-sm leading-relaxed opacity-80">{product.desc[lang]}</p>
           <div className="text-2xl"><PriceTag price={product.price} /></div>
@@ -438,7 +412,7 @@ function ProductModal({ product, onClose, addToCart, t, lang }) {
 function HomeSection({ sectionRef, t, lang, goProducts }) {
   const featured = useMemo(() => PRODUCTS.slice(0, 3), []);
   const [idx, setIdx] = useState(0);
-  const [animKey, setAnimKey] = useState(0); 
+  const [animKey, setAnimKey] = useState(0);
 
   useEffect(() => {
     const iv = setInterval(() => {
@@ -450,18 +424,19 @@ function HomeSection({ sectionRef, t, lang, goProducts }) {
   useEffect(() => {
     const animInterval = setInterval(() => {
       setAnimKey((prev) => prev + 1);
-    }, 4000); // يتكرر كل 2 ثانية (2000ms)
+    }, 4000);
     return () => clearInterval(animInterval);
   }, []);
 
-  const brand = "LAMSANO SYM";
+  // Two words rendered as separate blocks so a word is never split mid-way
+  // on narrow screens; they stack on mobile and sit side by side from md up.
+  const words = ["LAMSANO", "SYM"];
 
   return (
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-black text-white"
     >
-      {/* 1. خلفية الصور الملساء الناعمة */}
       {featured.map((p, i) => (
         <div
           key={p.id}
@@ -476,7 +451,6 @@ function HomeSection({ sectionRef, t, lang, goProducts }) {
         </div>
       ))}
 
-      {/* 2. الإضاءة الخلفية المحيطية */}
       <div
         className="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-25 blur-3xl z-20 pointer-events-none"
         style={{ background: COLORS.primaryLight }}
@@ -486,54 +460,52 @@ function HomeSection({ sectionRef, t, lang, goProducts }) {
         style={{ background: COLORS.primary }}
       />
 
-      {/* 3. المحتوى المركزي */}
       <div className="relative z-30 text-center max-w-4xl px-4 flex flex-col items-center">
-        
-        {/* اسم العلامة التجارية المتكرر كل ثانيتين */}
         <h1
-          key={animKey} /* إجبار إعادة الأنيميشن عند تغير المفتاح */
+          key={animKey}
           dir="ltr"
-          className="lamsano-logo flex flex-wrap justify-center gap-x-2 text-5xl md:text-8xl font-black mb-4 tracking-tight drop-shadow-2xl"
+          className="lamsano-logo flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-5xl md:text-8xl font-black mb-4 tracking-tight drop-shadow-2xl"
         >
-          {brand.split("").map((ch, i) => (
-            <span
-              key={i}
-              className="lamsano-letter"
-              style={{ animationDelay: `${i * 50}ms` }}
-            >
-              {ch === " " ? "\u00A0" : ch}
+          {words.map((word, wi) => (
+            <span key={wi} className="flex flex-nowrap">
+              {word.split("").map((ch, i) => (
+                <span
+                  key={i}
+                  className="lamsano-letter"
+                  style={{ animationDelay: `${(wi * word.length + i) * 50}ms` }}
+                >
+                  {ch}
+                </span>
+              ))}
             </span>
           ))}
         </h1>
 
-        {/* الوصف */}
         <p
-          className="text-lg md:text-2xl mb-8 max-w-2xl font-light leading-relaxed text-gray-200 drop-shadow-md"
+          className="text-base md:text-2xl mb-8 max-w-2xl font-light leading-relaxed text-gray-200 drop-shadow-md px-2"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           {t.home.tagline}
         </p>
 
-        {/* زر التفاعل */}
         <button
           onClick={goProducts}
-          className="group relative px-9 py-3.5 rounded-full text-white text-base font-semibold tracking-wider shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden mb-12"
+          className="group relative px-9 py-3.5 rounded-full text-white text-base font-semibold tracking-wider shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden mb-10 md:mb-12"
           style={{ background: COLORS.primary }}
         >
           <span className="relative z-10">{t.home.cta}</span>
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
         </button>
 
-        {/* المؤشرات المصغرة للصور الثلاث */}
-        <div className="flex items-center gap-4 bg-black/30 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/10 shadow-2xl">
+        <div className="flex items-center gap-3 md:gap-4 bg-black/30 backdrop-blur-md px-3 md:px-4 py-2 md:py-2.5 rounded-full border border-white/10 shadow-2xl">
           {featured.map((p, i) => (
             <button
               key={p.id}
               onClick={() => setIdx(i)}
               className={`relative overflow-hidden rounded-lg transition-all duration-500 ${
                 i === idx
-                  ? "w-14 h-14 ring-2 ring-white scale-105 shadow-xl"
-                  : "w-10 h-10 opacity-50 hover:opacity-80 scale-95"
+                  ? "w-12 h-12 md:w-14 md:h-14 ring-2 ring-white scale-105 shadow-xl"
+                  : "w-9 h-9 md:w-10 md:h-10 opacity-50 hover:opacity-80 scale-95"
               }`}
             >
               <ProductSwatch product={p} className="w-full h-full object-cover" />
@@ -542,7 +514,6 @@ function HomeSection({ sectionRef, t, lang, goProducts }) {
         </div>
       </div>
 
-      {/* 4. إعدادات الأنيميشن المكررة */}
       <style>{`
         .lamsano-letter {
           display: inline-block;
@@ -557,21 +528,9 @@ function HomeSection({ sectionRef, t, lang, goProducts }) {
         }
 
         @keyframes lamsanoWave {
-          0% {
-            opacity: 0;
-            transform: translateY(18px) scale(0.95);
-            filter: blur(4px);
-          }
-          50% {
-            opacity: 1;
-            transform: translateY(-2px) scale(1.02);
-            filter: blur(0px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            filter: blur(0px);
-          }
+          0% { opacity: 0; transform: translateY(18px) scale(0.95); filter: blur(4px); }
+          50% { opacity: 1; transform: translateY(-2px) scale(1.02); filter: blur(0px); }
+          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
         }
       `}</style>
     </section>
@@ -579,15 +538,16 @@ function HomeSection({ sectionRef, t, lang, goProducts }) {
 }
 
 /* =========================================================================
-   PRODUCTS SECTION (peek carousel)
+   PRODUCTS SECTION (peek carousel) — shows only 6 items + a "view all" link
    ========================================================================= */
-function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts }) {
+function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts, openProduct }) {
+  const HOME_LIMIT = 6;
+  const list = useMemo(() => PRODUCTS.slice(0, HOME_LIMIT), []);
   const [idx, setIdx] = useState(0);
-  const [selected, setSelected] = useState(null);
   const [showText, setShowText] = useState(true);
-  const n = PRODUCTS.length;
+  const n = list.length;
 
-  const get = (offset) => PRODUCTS[(idx + offset + n) % n];
+  const get = (offset) => list[(idx + offset + n) % n];
   const current = get(0);
 
   const go = (newIdx) => setIdx(newIdx);
@@ -603,7 +563,7 @@ function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts }) {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate w-full py-16 md:py-24 px-4 md:px-10 flex items-center justify-center"
+      className="relative isolate w-full py-10 md:py-24 px-4 md:px-10 flex flex-col items-center justify-center gap-6"
       style={{ background: COLORS.white }}
     >
       <style>{`
@@ -618,24 +578,24 @@ function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts }) {
         .fsu-1 { animation: fadeSlideUp .6s ease .05s both; }
         .fsu-2 { animation: fadeSlideUp .6s ease .18s both; }
         .fsu-3 { animation: fadeSlideUp .6s ease .30s both; }
-        .fsu-4 { animation: fadeSlideUp .6s ease .42s both; }
         .zoom-anim { animation: zoomIn .8s ease both; }
       `}</style>
 
-      {/* الإطار الكبير: يحتوي الصورة + النص + الأزرار، ولا يأخذ كامل الـ section */}
       <div
-        className="relative w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl"
-        style={{ height: "min(70vh, 560px)" }}
+        className="relative w-full max-w-5xl rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
+        style={{ height: "min(66vh, 520px)" }}
       >
-        {/* الصورة الكبيرة داخل الإطار فقط */}
         <div key={"bg-" + current.id} className="absolute inset-0 zoom-anim">
-          <img
-            src={current.image}
-            alt={current.name[lang]}
-            className="w-full h-full object-cover"
-          />
+          <ProductSwatch product={current} className="w-full h-full object-cover" />
           <div
             className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 35%, rgba(0,0,0,.65) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 hidden md:block"
             style={{
               background:
                 "linear-gradient(90deg, rgba(0,0,0,.6) 15%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 75%)",
@@ -643,24 +603,23 @@ function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts }) {
           />
         </div>
 
-        {/* النص فوق الصورة، داخل نفس الإطار */}
-        <div className="absolute inset-0 z-10 flex flex-col justify-center px-8 md:px-12 max-w-md text-white">
+        <div className="absolute inset-0 z-10 flex flex-col justify-end md:justify-center px-5 md:px-12 pb-20 md:pb-0 max-w-[90%] md:max-w-md text-white">
           {showText && (
             <>
               <h2
                 key={"t-" + current.id}
-                className="fsu-1 text-2xl md:text-4xl font-semibold mb-3"
+                className="fsu-1 text-xl md:text-4xl font-semibold mb-2 md:mb-3"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 {current.name[lang]}
               </h2>
-              <p key={"d-" + current.id} className="fsu-2 text-sm opacity-85 mb-5 leading-relaxed">
-                {current.description ? current.description[lang] : t.products.subtitle}
+              <p key={"d-" + current.id} className="fsu-2 text-xs md:text-sm opacity-90 mb-4 md:mb-5 leading-relaxed line-clamp-2 md:line-clamp-none">
+                {current.desc[lang]}
               </p>
               <div key={"b-" + current.id} className="fsu-3 flex items-center gap-3 flex-wrap">
                 <button
-                  onClick={() => setSelected(current)}
-                  className="px-6 py-2.5 rounded-full text-sm tracking-wide bg-white font-medium"
+                  onClick={() => openProduct(current)}
+                  className="px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm tracking-wide bg-white font-medium"
                   style={{ color: COLORS.primaryDark }}
                 >
                   {t.products.explore}
@@ -670,18 +629,18 @@ function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts }) {
           )}
         </div>
 
-        {/* أزرار التالي/السابق داخل الإطار */}
-        <div className="absolute bottom-6 start-8 z-20 flex gap-3">
-          <button onClick={prev} className="p-2.5 rounded-full shadow-md bg-white" style={{ color: COLORS.primaryDark }}>
-            <ChevronLeft size={18} style={{ transform: lang === "ar" ? "rotate(180deg)" : "none" }} />
+        <div className="absolute bottom-4 md:bottom-6 start-5 md:start-8 z-20 flex gap-3">
+          <button onClick={prev} className="p-2 md:p-2.5 rounded-full shadow-md bg-white" style={{ color: COLORS.primaryDark }}>
+            <ChevronLeft size={16} style={{ transform: lang === "ar" ? "rotate(180deg)" : "none" }} />
           </button>
-          <button onClick={next} className="p-2.5 rounded-full shadow-md bg-white" style={{ color: COLORS.primaryDark }}>
-            <ChevronRight size={18} style={{ transform: lang === "ar" ? "rotate(180deg)" : "none" }} />
+          <button onClick={next} className="p-2 md:p-2.5 rounded-full shadow-md bg-white" style={{ color: COLORS.primaryDark }}>
+            <ChevronRight size={16} style={{ transform: lang === "ar" ? "rotate(180deg)" : "none" }} />
           </button>
         </div>
 
-        {/* الإطارات الصغيرة للصور القادمة، متراكبة على حافة الإطار الكبير */}
-        <div className="absolute top-1/2 -translate-y-1/2 end-0 translate-x-1/3 md:translate-x-1/4 z-20 flex items-center gap-3 md:gap-4">
+        {/* Stacked next-up previews — desktop/tablet only; on phones they
+            crowded out the text, so they're hidden below md. */}
+        <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 end-0 translate-x-1/4 z-20 items-center gap-4">
           {[1, 2, 3].map((offset, i) => {
             if (offset >= n) return null;
             const p = get(offset);
@@ -704,7 +663,13 @@ function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts }) {
         </div>
       </div>
 
-      <ProductModal product={selected} onClose={() => setSelected(null)} addToCart={addToCart} t={t} lang={lang} />
+      <button
+        onClick={goAllProducts}
+        className="px-6 py-2.5 rounded-full text-sm font-medium border tracking-wide"
+        style={{ borderColor: COLORS.primary, color: COLORS.primaryDark }}
+      >
+        {t.products.viewAll}
+      </button>
     </section>
   );
 }
@@ -712,9 +677,8 @@ function ProductsSection({ sectionRef, t, lang, addToCart, goAllProducts }) {
 /* =========================================================================
    ALL PRODUCTS PAGE
    ========================================================================= */
-function AllProductsPage({ t, lang, addToCart, goHome }) {
+function AllProductsPage({ t, lang, addToCart, goHome, openProduct }) {
   const [filter, setFilter] = useState("all");
-  const [selected, setSelected] = useState(null);
   const list = PRODUCTS.filter((p) => filter === "all" || p.category === filter);
 
   return (
@@ -745,7 +709,7 @@ function AllProductsPage({ t, lang, addToCart, goHome }) {
         {list.map((p) => (
           <Reveal key={p.id}>
             <div className="rounded-2xl overflow-hidden shadow-md bg-white flex flex-col">
-              <div onClick={() => setSelected(p)} className="h-40 md:h-48 cursor-pointer">
+              <div onClick={() => openProduct(p)} className="h-40 md:h-48 cursor-pointer">
                 <ProductSwatch product={p} />
               </div>
               <div className="p-4 flex flex-col gap-1">
@@ -762,8 +726,6 @@ function AllProductsPage({ t, lang, addToCart, goHome }) {
           </Reveal>
         ))}
       </div>
-
-      <ProductModal product={selected} onClose={() => setSelected(null)} addToCart={addToCart} t={t} lang={lang} />
     </div>
   );
 }
@@ -796,7 +758,10 @@ function CustomizerSection({ sectionRef, t, lang }) {
     return { x: ((clientX - rect.left) / rect.width) * canvas.width, y: ((clientY - rect.top) / rect.height) * canvas.height };
   };
 
+  // stopPropagation on every drawing handler so touches on the canvas never
+  // bubble up to the full-page scroller and flip to the next section.
   const start = (e) => {
+    e.stopPropagation();
     drawing.current = true;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -805,6 +770,7 @@ function CustomizerSection({ sectionRef, t, lang }) {
     ctx.moveTo(x, y);
   };
   const move = (e) => {
+    e.stopPropagation();
     if (!drawing.current) return;
     e.preventDefault();
     const canvas = canvasRef.current;
@@ -816,7 +782,7 @@ function CustomizerSection({ sectionRef, t, lang }) {
     ctx.lineCap = "round";
     ctx.stroke();
   };
-  const end = () => { drawing.current = false; };
+  const end = (e) => { e.stopPropagation(); drawing.current = false; };
 
   const clearCanvas = () => {
     const canvas = canvasRef.current;
@@ -841,22 +807,22 @@ function CustomizerSection({ sectionRef, t, lang }) {
   const palette = [COLORS.ink, COLORS.primaryDark, COLORS.primary, COLORS.primaryLight, "#7A9E7E", "#A65D57"];
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center px-5 md:px-10 py-24" style={{ background: COLORS.cream }}>
-      <Reveal className="text-center mb-10 max-w-xl">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.customizer.title}</h2>
-        <p className="text-sm md:text-base opacity-70">{t.customizer.subtitle}</p>
+    <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-10 py-6 md:py-24 overflow-y-auto" style={{ background: COLORS.cream }}>
+      <Reveal className="text-center mb-4 md:mb-10 max-w-xl shrink-0">
+        <h2 className="text-xl md:text-4xl font-semibold mb-1 md:mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.customizer.title}</h2>
+        <p className="text-xs md:text-base opacity-70">{t.customizer.subtitle}</p>
       </Reveal>
 
-      <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
-        <Reveal className="bg-white rounded-2xl p-6 shadow-md flex flex-col gap-4">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-8 w-full max-w-4xl">
+        <Reveal className="bg-white rounded-2xl p-4 md:p-6 shadow-md flex flex-col gap-3 md:gap-4">
           <div>
-            <label className="text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.type}</label>
+            <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.type}</label>
             <div className="flex gap-3">
               {["bag", "painting"].map((ty) => (
                 <button
                   key={ty}
                   onClick={() => setType(ty)}
-                  className="px-4 py-2 rounded-full text-sm border"
+                  className="px-4 py-2 rounded-full text-xs md:text-sm border"
                   style={{ borderColor: COLORS.primary, background: type === ty ? COLORS.primary : "transparent", color: type === ty ? "#fff" : COLORS.primaryDark }}
                 >
                   {ty === "bag" ? t.customizer.bag : t.customizer.painting}
@@ -866,12 +832,12 @@ function CustomizerSection({ sectionRef, t, lang }) {
           </div>
 
           <div>
-            <label className="text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.descLabel}</label>
+            <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.descLabel}</label>
             <textarea
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
               placeholder={t.customizer.descPlaceholder}
-              rows={4}
+              rows={3}
               className="w-full rounded-xl border p-3 text-sm outline-none"
               style={{ borderColor: COLORS.cream }}
             />
@@ -879,11 +845,11 @@ function CustomizerSection({ sectionRef, t, lang }) {
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.nameLabel}</label>
+              <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.nameLabel}</label>
               <input value={name} onChange={(e) => setName(e.target.value)} placeholder={t.customizer.namePlaceholder} className="w-full rounded-xl border p-3 text-sm outline-none" style={{ borderColor: COLORS.cream }} />
             </div>
             <div>
-              <label className="text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.phoneLabel}</label>
+              <label className="text-xs md:text-sm font-medium block mb-2" style={{ color: COLORS.ink }}>{t.customizer.phoneLabel}</label>
               <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t.customizer.phonePlaceholder} className="w-full rounded-xl border p-3 text-sm outline-none" style={{ borderColor: COLORS.cream }} />
             </div>
           </div>
@@ -893,24 +859,27 @@ function CustomizerSection({ sectionRef, t, lang }) {
           </button>
         </Reveal>
 
-        <Reveal delay={150} className="bg-white rounded-2xl p-6 shadow-md flex flex-col gap-4">
-          <label className="text-sm font-medium flex items-center gap-2" style={{ color: COLORS.ink }}>
+        <Reveal delay={150} className="bg-white rounded-2xl p-4 md:p-6 shadow-md flex flex-col gap-3 md:gap-4">
+          <label className="text-xs md:text-sm font-medium flex items-center gap-2" style={{ color: COLORS.ink }}>
             <Brush size={15} /> {t.customizer.drawTitle}
           </label>
-          <canvas
-            ref={canvasRef}
-            width={400}
-            height={280}
-            className="w-full rounded-xl border touch-none"
-            style={{ borderColor: COLORS.cream, cursor: "crosshair" }}
-            onMouseDown={start}
-            onMouseMove={move}
-            onMouseUp={end}
-            onMouseLeave={end}
-            onTouchStart={start}
-            onTouchMove={move}
-            onTouchEnd={end}
-          />
+          {/* no-swipe: excluded from the full-page scroll gesture detection */}
+          <div className="no-swipe">
+            <canvas
+              ref={canvasRef}
+              width={400}
+              height={220}
+              className="w-full rounded-xl border touch-none"
+              style={{ borderColor: COLORS.cream, cursor: "crosshair" }}
+              onMouseDown={start}
+              onMouseMove={move}
+              onMouseUp={end}
+              onMouseLeave={end}
+              onTouchStart={start}
+              onTouchMove={move}
+              onTouchEnd={end}
+            />
+          </div>
           <div className="flex items-center gap-2">
             {palette.map((c) => (
               <button
@@ -943,8 +912,8 @@ function AboutSection({ sectionRef, t }) {
   return (
     <section ref={sectionRef} className="min-h-screen flex items-center justify-center px-6 py-24" style={{ background: COLORS.white }}>
       <Reveal className="max-w-2xl text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-6" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.about.title}</h2>
-        <p className="text-base md:text-lg leading-loose opacity-80" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{t.about.text}</p>
+        <h2 className="text-2xl md:text-4xl font-semibold mb-4 md:mb-6" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.about.title}</h2>
+        <p className="text-sm md:text-lg leading-relaxed md:leading-loose opacity-80" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{t.about.text}</p>
       </Reveal>
     </section>
   );
@@ -954,37 +923,46 @@ function AboutSection({ sectionRef, t }) {
    TEAM SECTION
    ========================================================================= */
 function TeamSection({ sectionRef, t, lang }) {
+  // Tap-to-reveal on mobile: CSS :hover never sticks reliably on touch, so
+  // color is toggled explicitly with state instead of relying on hover.
+  const [revealed, setRevealed] = useState({});
+  const toggle = (id) => setRevealed((prev) => ({ ...prev, [id]: !prev[id] }));
+
   return (
     <section
       ref={sectionRef}
-      className="h-full flex flex-col items-center justify-center px-4 md:px-6 py-10 md:py-24 overflow-y-auto"
+      className="h-full flex flex-col items-center justify-center px-3 md:px-6 py-5 md:py-24 overflow-y-auto"
       style={{ background: COLORS.cream }}
     >
-      <Reveal className="text-center mb-6 md:mb-12 max-w-xl shrink-0">
-        <h2 className="text-2xl md:text-4xl font-semibold mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>
+      <Reveal className="text-center mb-3 md:mb-12 max-w-xl shrink-0">
+        <h2 className="text-lg md:text-4xl font-semibold mb-1 md:mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>
           {t.team.title}
         </h2>
-        <p className="text-xs md:text-base opacity-70">{t.team.subtitle}</p>
+        <p className="text-[11px] md:text-base opacity-70">{t.team.subtitle}</p>
       </Reveal>
 
-      {/* شبكة متجاوبة: عمودان على الموبايل، تتوسع تلقائيًا في الشاشات الأكبر */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap justify-center gap-3 md:gap-6 max-w-7xl w-full">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap justify-center gap-2 md:gap-6 max-w-7xl w-full">
         {TEAM.map((m, i) => (
           <Reveal key={m.id} delay={i * 80}>
-            <div className="w-full md:w-56 relative group overflow-hidden bg-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg">
-              <div className="w-full aspect-[3/4] md:h-80 overflow-hidden">
+            <div
+              onClick={() => toggle(m.id)}
+              onMouseEnter={() => setRevealed((prev) => ({ ...prev, [m.id]: true }))}
+              onMouseLeave={() => setRevealed((prev) => ({ ...prev, [m.id]: false }))}
+              className="w-full md:w-56 relative group overflow-hidden bg-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg cursor-pointer"
+            >
+              <div className="w-full aspect-[4/5] md:h-80 overflow-hidden">
                 <img
                   src={m.image}
                   alt={m.name}
-                  className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-500"
+                  className={`w-full h-full object-cover object-center transition-all duration-500 ${revealed[m.id] ? "grayscale-0" : "grayscale"}`}
                 />
               </div>
 
-              <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 bg-white p-2 md:p-3 shadow-md">
-                <p className="text-xs md:text-sm font-bold truncate" style={{ color: COLORS.ink }}>
+              <div className="absolute bottom-1.5 left-1.5 right-1.5 md:bottom-3 md:left-3 md:right-3 bg-white p-1.5 md:p-3 shadow-md">
+                <p className="text-[10px] md:text-sm font-bold truncate" style={{ color: COLORS.ink }}>
                   {m.name}
                 </p>
-                <p className="text-[10px] md:text-xs text-gray-500 truncate mt-0.5">
+                <p className="text-[9px] md:text-xs text-gray-500 truncate mt-0.5">
                   {m.role[lang]}
                 </p>
               </div>
@@ -995,6 +973,7 @@ function TeamSection({ sectionRef, t, lang }) {
     </section>
   );
 }
+
 /* =========================================================================
    TESTIMONIALS SECTION
    ========================================================================= */
@@ -1002,7 +981,7 @@ function TestimonialsSection({ sectionRef, t, lang }) {
   return (
     <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center px-6 py-24" style={{ background: COLORS.white }}>
       <Reveal className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-semibold" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.testimonials.title}</h2>
+        <h2 className="text-2xl md:text-4xl font-semibold" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.testimonials.title}</h2>
       </Reveal>
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl w-full">
         {TESTIMONIALS.map((r, i) => (
@@ -1026,7 +1005,7 @@ function ContactSection({ sectionRef, t }) {
   return (
     <section ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center px-6 py-24" style={{ background: COLORS.cream }}>
       <Reveal className="text-center max-w-lg">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.contact.title}</h2>
+        <h2 className="text-2xl md:text-4xl font-semibold mb-2" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.contact.title}</h2>
         <p className="text-sm md:text-base opacity-70 mb-8">{t.contact.subtitle}</p>
 
         <div className="flex flex-col gap-4 items-center mb-8">
@@ -1034,7 +1013,6 @@ function ContactSection({ sectionRef, t }) {
           <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.ink }}><Mail size={15} /> contact@lamsanosym.com</div>
           <div className="flex items-center gap-2 text-sm" style={{ color: COLORS.ink }}><MapPin size={15} /> Morocco</div>
         </div>
-
 
         <a
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
@@ -1049,26 +1027,38 @@ function ContactSection({ sectionRef, t }) {
     </section>
   );
 }
+
+/* =========================================================================
+   FULL PAGE SCROLLER
+   - higher thresholds so a small/accidental swipe doesn't flip sections
+   - ignores gestures that start on a ".no-swipe" element (the sketch canvas)
+   - blocks the browser's native pull-to-refresh / rubber-band scroll, which
+     was causing a full page reload when swiping up at the top of the page
+   ========================================================================= */
 function FullPageScroller({ children }) {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
   const containerRef = useRef(null);
-  const touchStartY = useRef(0);
+  const touchStartY = useRef(null);
   const total = React.Children.count(children);
 
   const goTo = useCallback((index) => {
     if (index < 0 || index >= total || animating) return;
     setAnimating(true);
     setCurrent(index);
-    setTimeout(() => setAnimating(false), 900); // يجب أن يطابق مدة transition بالأسفل
+    setTimeout(() => setAnimating(false), 900);
   }, [total, animating]);
 
   useEffect(() => {
+    const isNoSwipe = (target) => target && target.closest && target.closest(".no-swipe");
+
     const onWheel = (e) => {
+      if (isNoSwipe(e.target)) return;
       e.preventDefault();
       if (animating) return;
-      if (e.deltaY > 30) goTo(current + 1);
-      else if (e.deltaY < -30) goTo(current - 1);
+      const WHEEL_THRESHOLD = 65;
+      if (e.deltaY > WHEEL_THRESHOLD) goTo(current + 1);
+      else if (e.deltaY < -WHEEL_THRESHOLD) goTo(current - 1);
     };
 
     const onKeyDown = (e) => {
@@ -1077,29 +1067,41 @@ function FullPageScroller({ children }) {
       if (e.key === "ArrowUp" || e.key === "PageUp") goTo(current - 1);
     };
 
-    const onTouchStart = (e) => { touchStartY.current = e.touches[0].clientY; };
+    const onTouchStart = (e) => {
+      if (isNoSwipe(e.target)) { touchStartY.current = null; return; }
+      touchStartY.current = e.touches[0].clientY;
+    };
+    const onTouchMove = (e) => {
+      // Prevent the native pull-to-refresh / rubber-band scroll on mobile,
+      // which otherwise reloads the page when swiping up at the top slide.
+      if (touchStartY.current === null) return;
+      e.preventDefault();
+    };
     const onTouchEnd = (e) => {
-      if (animating) return;
+      if (animating || touchStartY.current === null) return;
+      const TOUCH_THRESHOLD = 90;
       const delta = touchStartY.current - e.changedTouches[0].clientY;
-      if (delta > 50) goTo(current + 1);
-      else if (delta < -50) goTo(current - 1);
+      if (delta > TOUCH_THRESHOLD) goTo(current + 1);
+      else if (delta < -TOUCH_THRESHOLD) goTo(current - 1);
+      touchStartY.current = null;
     };
 
     const el = containerRef.current;
     el.addEventListener("wheel", onWheel, { passive: false });
     el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
     el.addEventListener("touchend", onTouchEnd, { passive: true });
     window.addEventListener("keydown", onKeyDown);
 
     return () => {
       el.removeEventListener("wheel", onWheel);
       el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
       el.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [current, animating, goTo]);
 
-  // نعرض هذا المكوّن الأداة للتنقل الخارجي (روابط الـ Navbar)
   FullPageScroller.goToIndex = goTo;
 
   return (
@@ -1108,13 +1110,14 @@ function FullPageScroller({ children }) {
         className="fullpage-track"
         style={{ transform: `translateY(-${current * 100}vh)` }}
       >
-        {React.Children.map(children, (child, i) => (
+        {React.Children.map(children, (child) => (
           <div className="fullpage-slide">{child}</div>
         ))}
       </div>
     </div>
   );
 }
+
 /* =========================================================================
    APP ROOT
    ========================================================================= */
@@ -1123,6 +1126,11 @@ export default function App() {
   const [page, setPage] = useState("home");
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
+  // Lifted to the app root: the product modal uses position:fixed, and
+  // rendering it *inside* the FullPageScroller (whose track is transformed)
+  // broke fixed positioning, which is why it never appeared. Rendering it
+  // once here, as a sibling of everything else, fixes that.
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const t = T[lang];
   const dir = t.dir;
@@ -1147,31 +1155,40 @@ export default function App() {
 
   return (
     <div dir={dir} style={{ fontFamily: "'Cormorant Garamond', serif", color: COLORS.ink }}>
-  <style>{`
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
-  ::selection { background: ${COLORS.primaryLight}; color: #fff; }
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+        ::selection { background: ${COLORS.primaryLight}; color: #fff; }
 
-  .fullpage-viewport {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-  }
-  .fullpage-track {
-    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
-    will-change: transform;
-  }
-  .fullpage-slide {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    isolation: isolate;
-  }
-  .fullpage-slide > section {
-    height: 100vh !important;
-    min-height: 100vh !important;
-  }
-`}</style>
+        html, body {
+          overscroll-behavior-y: contain;
+        }
+
+        .fullpage-viewport {
+          height: 100vh;
+          overflow: hidden;
+          position: relative;
+          touch-action: none;
+          overscroll-behavior: contain;
+        }
+        .fullpage-track {
+          transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+          will-change: transform;
+        }
+        .fullpage-slide {
+          height: 100vh;
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          isolation: isolate;
+        }
+        .fullpage-slide > section {
+          height: 100vh !important;
+          min-height: 100vh !important;
+        }
+        .no-swipe {
+          touch-action: auto;
+        }
+      `}</style>
 
       <Navbar
         t={t} lang={lang} setLang={setLang}
@@ -1179,26 +1196,27 @@ export default function App() {
         cartCount={cartCount} onOpenCart={() => setCartOpen(true)}
       />
 
-{page === "home" ? (
-  <FullPageScroller>
-    <HomeSection sectionRef={setRef("home")} t={t} lang={lang} goProducts={goProducts} />
-    <ProductsSection sectionRef={setRef("products")} t={t} lang={lang} addToCart={addToCart} goAllProducts={goAllProducts} />
-    <CustomizerSection sectionRef={setRef("customizer")} t={t} lang={lang} />
-    <AboutSection sectionRef={setRef("about")} t={t} />
-    <TeamSection sectionRef={setRef("team")} t={t} lang={lang} />
-    <TestimonialsSection sectionRef={setRef("testimonials")} t={t} lang={lang} />
-    <ContactSection sectionRef={setRef("contact")} t={t} />
-    <div className="fullpage-slide">
-      <footer className="h-full flex items-center justify-center text-center py-6 text-xs opacity-60" style={{ background: COLORS.white }}>
-        Lamsano Sym © {new Date().getFullYear()} — {t.footer.rights}
-      </footer>
-    </div>
-  </FullPageScroller>
-) : (
-  <AllProductsPage t={t} lang={lang} addToCart={addToCart} goHome={goHome} />
-)}
+      {page === "home" ? (
+        <FullPageScroller>
+          <HomeSection sectionRef={setRef("home")} t={t} lang={lang} goProducts={goProducts} />
+          <ProductsSection sectionRef={setRef("products")} t={t} lang={lang} addToCart={addToCart} goAllProducts={goAllProducts} openProduct={setSelectedProduct} />
+          <CustomizerSection sectionRef={setRef("customizer")} t={t} lang={lang} />
+          <AboutSection sectionRef={setRef("about")} t={t} />
+          <TeamSection sectionRef={setRef("team")} t={t} lang={lang} />
+          <TestimonialsSection sectionRef={setRef("testimonials")} t={t} lang={lang} />
+          <ContactSection sectionRef={setRef("contact")} t={t} />
+          <div className="fullpage-slide">
+            <footer className="h-full flex items-center justify-center text-center py-6 text-xs opacity-60" style={{ background: COLORS.white }}>
+              Lamsano Sym © {new Date().getFullYear()} — {t.footer.rights}
+            </footer>
+          </div>
+        </FullPageScroller>
+      ) : (
+        <AllProductsPage t={t} lang={lang} addToCart={addToCart} goHome={goHome} openProduct={setSelectedProduct} />
+      )}
 
       <CartPanel open={cartOpen} onClose={() => setCartOpen(false)} cart={cart} setCart={setCart} t={t} lang={lang} />
+      <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} addToCart={addToCart} t={t} lang={lang} />
     </div>
   );
 }
