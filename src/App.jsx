@@ -4,7 +4,7 @@ import {
   Send, Palette, Trash2, Download, Phone, Mail,
   MapPin, ShoppingCart, Menu, Image as ImageIcon, Brush,
 } from "lucide-react";
-import { Brush, Heart, Sparkles } from "lucide-react";
+
 
 // lucide-react dropped brand/logo icons (Instagram, Facebook, etc.) from its
 // set some versions ago — importing "Instagram" from it resolves to
@@ -948,9 +948,9 @@ function CustomizerSection({ sectionRef, t, lang }) {
    ========================================================================= */
 function AboutSection({ sectionRef, t }) {
   const features = [
-    { icon: Brush, label: t.about.feature1 || "Handmade" },
-    { icon: Heart, label: t.about.feature2 || "Unique Design" },
-    { icon: Sparkles, label: t.about.feature3 || "Made With Passion" },
+    { label: t.about.feature1 || "Handmade" },
+    { label: t.about.feature2 || "Unique Design" },
+    { label: t.about.feature3 || "Made With Passion" },
   ];
 
   return (
@@ -971,15 +971,15 @@ function AboutSection({ sectionRef, t }) {
           {t.about.text}
         </p>
 
-        {/* صف المزايا / القيم */}
+        {/* صف المزايا / القيم - بدون أيقونات */}
         <div className="grid grid-cols-3 gap-3 md:gap-8 mt-10 md:mt-14">
           {features.map((f, i) => (
             <div key={i} className="flex flex-col items-center gap-2 md:gap-3">
               <div
-                className="w-11 h-11 md:w-14 md:h-14 rounded-full flex items-center justify-center"
-                style={{ background: COLORS.cream }}
+                className="w-11 h-11 md:w-14 md:h-14 rounded-full flex items-center justify-center text-lg md:text-2xl font-semibold"
+                style={{ background: COLORS.cream, color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}
               >
-                <f.icon size={18} style={{ color: COLORS.primaryDark }} />
+                {i + 1}
               </div>
               <span
                 className="text-[11px] md:text-sm opacity-80"
