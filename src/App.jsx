@@ -946,11 +946,49 @@ function CustomizerSection({ sectionRef, t, lang }) {
    ABOUT SECTION
    ========================================================================= */
 function AboutSection({ sectionRef, t }) {
+  const features = [
+    { icon: Brush, label: t.about.feature1 || "Handmade" },
+    { icon: Heart, label: t.about.feature2 || "Unique Design" },
+    { icon: Sparkles, label: t.about.feature3 || "Made With Passion" },
+  ];
+
   return (
     <section ref={sectionRef} className="min-h-screen flex items-center justify-center px-6 py-24" style={{ background: COLORS.white }}>
       <Reveal className="max-w-2xl text-center">
-        <h2 className="text-2xl md:text-4xl font-semibold mb-4 md:mb-6" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>{t.about.title}</h2>
-        <p className="text-sm md:text-lg leading-relaxed md:leading-loose opacity-80" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{t.about.text}</p>
+        <h2 className="text-2xl md:text-4xl font-semibold mb-4 md:mb-6" style={{ color: COLORS.primaryDark, fontFamily: "'Cormorant Garamond', serif" }}>
+          {t.about.title}
+        </h2>
+
+        {/* خط فاصل زخرفي */}
+        <div className="flex items-center justify-center gap-3 mb-6 md:mb-8">
+          <span className="h-px w-10 md:w-16" style={{ background: COLORS.primary, opacity: 0.5 }} />
+          <span className="w-1.5 h-1.5 rounded-full" style={{ background: COLORS.primary }} />
+          <span className="h-px w-10 md:w-16" style={{ background: COLORS.primary, opacity: 0.5 }} />
+        </div>
+
+        <p className="text-sm md:text-lg leading-relaxed md:leading-loose opacity-80" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          {t.about.text}
+        </p>
+
+        {/* صف المزايا / القيم */}
+        <div className="grid grid-cols-3 gap-3 md:gap-8 mt-10 md:mt-14">
+          {features.map((f, i) => (
+            <div key={i} className="flex flex-col items-center gap-2 md:gap-3">
+              <div
+                className="w-11 h-11 md:w-14 md:h-14 rounded-full flex items-center justify-center"
+                style={{ background: COLORS.cream }}
+              >
+                <f.icon size={18} style={{ color: COLORS.primaryDark }} />
+              </div>
+              <span
+                className="text-[11px] md:text-sm opacity-80"
+                style={{ color: COLORS.ink, fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                {f.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </Reveal>
     </section>
   );
