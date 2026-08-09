@@ -4,6 +4,7 @@ import {
   Send, Palette, Trash2, Download, Phone, Mail,
   MapPin, ShoppingCart, Menu, Image as ImageIcon, Brush,
 } from "lucide-react";
+import { Brush, Heart, Sparkles } from "lucide-react";
 
 // lucide-react dropped brand/logo icons (Instagram, Facebook, etc.) from its
 // set some versions ago — importing "Instagram" from it resolves to
